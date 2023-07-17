@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active-navbar {
+    @apply border-b border-b-primary;
+}
+
+.hide {
+    @apply hidden opacity-0 h-0;
+}
+
+.show {
+    @apply block opacity-100 h-auto;
+}
