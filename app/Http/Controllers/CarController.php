@@ -13,4 +13,18 @@ class CarController extends Controller
             "cars" => Car::latest()->get()
         ]);
     }
+
+    public function home()
+    {
+        return view('home', [
+            "cars" => Car::inRandomOrder()->take(5)->get()
+        ]);
+    }
+
+    public function show(Car $car)
+    {
+        return view('car', [
+            "car" => $car,
+        ]);
+    }
 }

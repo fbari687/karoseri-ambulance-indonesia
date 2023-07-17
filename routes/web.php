@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [CarController::class, 'home']);
 
 Route::get('/cars', [CarController::class, 'index']);
+
+Route::get('/cars/{car:slug}', [CarController::class, 'show']);
 
 Route::get('/specs', function () {
     return view('specs');

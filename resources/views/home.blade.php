@@ -71,7 +71,7 @@
       <div class="pt-6 px-4 flex flex-col gap-4">
         <div class="flex items-center justify-between">
           <h3 class="font-bold text-xl lg:text-3xl">Daftar Model</h3>
-          <a href="model.html" class="self-end">
+          <a href="/cars" class="self-end">
             <h3 class="text-sky-500 text-sm transition duration-150 hover:text-sky-600">Lihat Semua Model</h3>
           </a>
         </div>
@@ -79,92 +79,25 @@
           <div id="model-carousel" class="splide" role="group">
             <div class="splide__track py-4">
               <ul class="splide__list">
+                @foreach ($cars as $car)  
                 <li class="splide__slide">
                   <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-                    <a href="#">
+                    <a href="/cars/{{ $car->slug }}">
                       <div class="w-full">
-                        <img src="{{ asset('img/product-1.jpg') }}" alt="" />
+                        <img src="{{ asset('img/'. $car->image) }}" alt="" />
                       </div>
                     </a>
                     <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                      <a href="detail.html" class="w-full self-start">
-                        <h3 class="text-base text-primary font-bold text-center lg:text-xl">Hino Dutro Short</h3>
+                      <a href="/cars/{{ $car->slug }}" class="w-full self-start">
+                        <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
                       </a>
-                      <a href="detail.html" class="w-full self-end">
+                      <a href="/cars/{{ $car->slug }}" class="w-full self-end">
                         <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
                       </a>
                     </div>
                   </div>
                 </li>
-                <li class="splide__slide">
-                  <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-                    <a href="#">
-                      <div class="w-full">
-                        <img src="{{ asset('img/product-2.jpg') }}" alt="" />
-                      </div>
-                    </a>
-                    <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                      <a href="#" class="w-full self-start">
-                        <h3 class="text-base text-primary font-bold text-center lg:text-xl">Mitsubishi Strada Triton</h3>
-                      </a>
-                      <a href="#" class="w-full self-end">
-                        <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-                    <a href="#">
-                      <div class="w-full">
-                        <img src="{{ asset('img/product-3.jpg') }}" alt="" />
-                      </div>
-                    </a>
-                    <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                      <a href="#" class="w-full self-start">
-                        <h3 class="text-base text-primary font-bold text-center lg:text-xl">Kia Travello</h3>
-                      </a>
-                      <a href="#" class="w-full self-end">
-                        <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-                    <a href="#">
-                      <div class="w-full">
-                        <img src="{{ asset('img/product-4.jpg') }}" alt="" />
-                      </div>
-                    </a>
-                    <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                      <a href="#" class="w-full self-start">
-                        <h3 class="text-base text-primary font-bold text-center lg:text-xl">Mitsubishi L300</h3>
-                      </a>
-                      <a href="#" class="w-full self-end">
-                        <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li class="splide__slide shadow">
-                  <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-                    <a href="#">
-                      <div class="w-full">
-                        <img src="{{ asset('img/product-5.jpg') }}" alt="" />
-                      </div>
-                    </a>
-                    <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                      <a href="#" class="w-full self-start">
-                        <h3 class="text-base text-primary font-bold text-center lg:text-xl">Kia Travello</h3>
-                      </a>
-                      <a href="#" class="w-full self-end">
-                        <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-                      </a>
-                    </div>
-                  </div>
-                </li>
-
+                @endforeach
                 <li class="splide__slide border border-slate-300 flex justify-center items-center rounded-lg transition duration-150 shadow-md-right hover:bg-slate-400">
                   <a href="model.html" class="self-center hover:bg-slate-400">
                     <div class="p-3 w-full h-full bg-transparent flex flex-col gap-4 items-center justify-center">

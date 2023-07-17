@@ -2,7 +2,7 @@
   <nav class="w-full py-2 px-4 fixed top-0 left-0 bg-white border-b border-b-divider flex items-center justify-between lg:justify-around z-50">
     <div class="px-4">
       <a href="/">
-        <img src="{{ asset('img/LOGO-KAI.png') }}" alt="" width="60" />
+        <img src="{{ asset('img/icon.png') }}" alt="" width="60" />
       </a>
     </div>
     <div class="relative px-4">
@@ -50,7 +50,7 @@
         <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('/') ? 'active-navbar' : '' }}">Beranda</div>
       </a>
       <a href="/cars" class="h-full group">
-        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('cars') ? 'active-navbar' : '' }}">Model</div>
+        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('cars*') ? 'active-navbar' : '' }}">Model</div>
       </a>
       <a href="/specs" class="h-full group">
         <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('specs') ? 'active-navbar' : '' }}">Spesifikasi</div>

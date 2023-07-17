@@ -42,7 +42,7 @@
               <a href="#" class="w-full self-start">
                 <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
               </a>
-              <a href="#" class="w-full self-end">
+              <a href="/{{ $car->slug }}" class="w-full self-end">
                 <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
               </a>
             </div>
@@ -102,7 +102,7 @@
                 <a href="#" class="w-full self-start">
                   <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
                 </a>
-                <a href="#" class="w-full self-end">
+                <a href="/cars/{{ $car->slug }}" class="w-full self-end">
                   <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
                 </a>
               </div>
