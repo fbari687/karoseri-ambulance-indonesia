@@ -25,7 +25,10 @@ Route::get('/specs', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        'logo' => 'icon.png',
+        'name' => 'PT. Karoseri Ambulance Indonesia'
+    ]);
 });
 
 Route::get('/contact', function () {

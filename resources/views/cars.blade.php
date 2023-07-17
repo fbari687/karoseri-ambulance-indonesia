@@ -31,81 +31,23 @@
         </div>
         <!-- Model Mobile Start -->
         <div class="w-full px-2 grid grid-cols-2 gap-4">
+          @foreach ($cars as $car)
           <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
             <a href="#">
               <div class="w-full">
-                <img src="{{ asset('img/product-1.jpg') }}" alt="" />
+                <img src="{{ asset('img/' . $car->image) }}" alt="{{ $car->name }}" />
               </div>
             </a>
             <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
               <a href="#" class="w-full self-start">
-                <h3 class="text-base text-primary font-bold text-center lg:text-xl">Hino Dutro Short</h3>
+                <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
               </a>
               <a href="#" class="w-full self-end">
                 <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
               </a>
             </div>
           </div>
-          <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-            <a href="#">
-              <div class="w-full">
-                <img src="{{ asset('img/product-2.jpg') }}" alt="" />
-              </div>
-            </a>
-            <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-              <a href="#" class="w-full self-start">
-                <h3 class="text-base text-primary font-bold text-center lg:text-xl">Mitsubishi Strada Triton</h3>
-              </a>
-              <a href="#" class="w-full self-end">
-                <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-              </a>
-            </div>
-          </div>
-          <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-            <a href="#">
-              <div class="w-full">
-                <img src="{{ asset('img/product-3.jpg') }}" alt="" />
-              </div>
-            </a>
-            <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-              <a href="#" class="w-full self-start">
-                <h3 class="text-base text-primary font-bold text-center lg:text-xl">Kia Travello</h3>
-              </a>
-              <a href="#" class="w-full self-end">
-                <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-              </a>
-            </div>
-          </div>
-          <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-            <a href="#">
-              <div class="w-full">
-                <img src="{{ asset('img/product-4.jpg') }}" alt="" />
-              </div>
-            </a>
-            <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-              <a href="#" class="w-full self-start">
-                <h3 class="text-base text-primary font-bold text-center lg:text-xl">Mitsubishi L300</h3>
-              </a>
-              <a href="#" class="w-full self-end">
-                <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-              </a>
-            </div>
-          </div>
-          <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-            <a href="#">
-              <div class="w-full">
-                <img src="{{ asset('img/product-5.jpg') }}" alt="" />
-              </div>
-            </a>
-            <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-              <a href="#" class="w-full self-start">
-                <h3 class="text-base text-primary font-bold text-center lg:text-xl">DFSK Super Cab</h3>
-              </a>
-              <a href="#" class="w-full self-end">
-                <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-              </a>
-            </div>
-          </div>
+          @endforeach
         </div>
         <!-- Model Mobile End -->
       </div>
@@ -149,81 +91,23 @@
         </div>
         <div class="w-4/5 border-l border-l-divider p-4">
           <div class="w-full grid grid-cols-3 gap-4">
+            @foreach ($cars as $car)
             <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
               <a href="#">
                 <div class="w-full">
-                  <img src="{{ asset('img/product-1.jpg') }}" alt="" />
+                  <img src="{{ asset('img/' . $car->image) }}" alt="{{ $car->name }}" />
                 </div>
               </a>
               <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
                 <a href="#" class="w-full self-start">
-                  <h3 class="text-base text-primary font-bold text-center lg:text-xl">Hino Dutro Short</h3>
+                  <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
                 </a>
                 <a href="#" class="w-full self-end">
                   <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
                 </a>
               </div>
             </div>
-            <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-              <a href="#">
-                <div class="w-full">
-                  <img src="{{ asset('img/product-2.jpg') }}" alt="" />
-                </div>
-              </a>
-              <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                <a href="#" class="w-full self-start">
-                  <h3 class="text-base text-primary font-bold text-center lg:text-xl">Mitsubishi Strada Triton</h3>
-                </a>
-                <a href="#" class="w-full self-end">
-                  <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-                </a>
-              </div>
-            </div>
-            <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-              <a href="#">
-                <div class="w-full">
-                  <img src="{{ asset('img/product-3.jpg') }}" alt="" />
-                </div>
-              </a>
-              <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                <a href="#" class="w-full self-start">
-                  <h3 class="text-base text-primary font-bold text-center lg:text-xl">Kia Travello</h3>
-                </a>
-                <a href="#" class="w-full self-end">
-                  <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-                </a>
-              </div>
-            </div>
-            <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-              <a href="#">
-                <div class="w-full">
-                  <img src="{{ asset('img/product-4.jpg') }}" alt="" />
-                </div>
-              </a>
-              <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                <a href="#" class="w-full self-start">
-                  <h3 class="text-base text-primary font-bold text-center lg:text-xl">Mitsubishi L300</h3>
-                </a>
-                <a href="#" class="w-full self-end">
-                  <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-                </a>
-              </div>
-            </div>
-            <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-              <a href="#">
-                <div class="w-full">
-                  <img src="{{ asset('img/product-5.jpg') }}" alt="" />
-                </div>
-              </a>
-              <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                <a href="#" class="w-full self-start">
-                  <h3 class="text-base text-primary font-bold text-center lg:text-xl">DFSK Super Cab</h3>
-                </a>
-                <a href="#" class="w-full self-end">
-                  <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
-                </a>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>

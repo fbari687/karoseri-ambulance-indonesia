@@ -16,12 +16,12 @@
     <div class="container mx-auto">
       <div class="px-2 grid grid-cols-1 justify-center lg:grid-cols-2">
         <div class="flex items-center">
-          <img src="{{ asset('img/icon.png') }}" alt="" />
+          <img src="{{ asset('img/' . $logo) }}" alt="" />
         </div>
         <div class="my-16 flex flex-col items-center gap-4 lg:items-start">
-          <h2 class="font-bold text-xl text-primary pb-4 border-b-2 border-b-primary">PT. Karoseri Ambulance Indonesia</h2>
+          <h2 class="font-bold text-xl text-primary pb-4 border-b-2 border-b-primary">{{ $name }}</h2>
           <p class="text-justify px-2 text-lg">
-            <span class="font-bold">PT. Karoseri Ambulance Indonesia</span> adalah karoseri pertama di indonesia yang spesialis kesehatan, kami telah bekerja sama dengan seluruh Dinas Kesehatan se Indonesia dan Kementrian Kesehatan RI
+            <span class="font-bold">{{ $name }}</span> adalah karoseri pertama di indonesia yang spesialis kesehatan, kami telah bekerja sama dengan seluruh Dinas Kesehatan se Indonesia dan Kementrian Kesehatan RI
             juga Kementrian terkait dengan pelayanan dan pengadaan mobil ambulance. Karoseri KAI berdiri sejak tahun 2013 dan sampai sekarang tetap eksis di pelayanan pengadaan ambulance untuk Indonesia sehat.
           </p>
           <p class="text-justify px-2 text-lg">
