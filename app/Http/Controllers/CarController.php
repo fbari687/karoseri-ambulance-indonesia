@@ -9,8 +9,9 @@ class CarController extends Controller
 {
     public function index()
     {
+
         return view('cars', [
-            "cars" => Car::latest()->get()
+            "cars" => Car::with('brand', 'specs')->get()
         ]);
     }
 

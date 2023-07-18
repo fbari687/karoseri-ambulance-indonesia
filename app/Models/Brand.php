@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Car;
 
-class Spec extends Model
+class Brand extends Model
 {
     use HasFactory;
 
@@ -14,6 +14,6 @@ class Spec extends Model
 
     public function cars()
     {
-        return $this->belongsToMany(Car::class);
+        return $this->hasMany(Car::class);
     }
 }
