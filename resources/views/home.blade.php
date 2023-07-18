@@ -99,7 +99,7 @@
                 </li>
                 @endforeach
                 <li class="splide__slide border border-slate-300 flex justify-center items-center rounded-lg transition duration-150 shadow-md-right hover:bg-slate-400">
-                  <a href="model.html" class="self-center hover:bg-slate-400">
+                  <a href="/cars" class="self-center hover:bg-slate-400">
                     <div class="p-3 w-full h-full bg-transparent flex flex-col gap-4 items-center justify-center">
                       <i class="fa-solid fa-angle-right fa-2xl"></i>
                       <span class="text-2xl">Lainnya</span>

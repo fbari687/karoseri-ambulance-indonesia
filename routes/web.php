@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\SpecController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,7 @@ Route::get('/cars', [CarController::class, 'index']);
 
 Route::get('/cars/{car:slug}', [CarController::class, 'show']);
 
-Route::get('/specs', function () {
-    return view('specs');
-});
+Route::get('/specs', [SpecController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about', [

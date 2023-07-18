@@ -33,16 +33,16 @@
         <div class="w-full px-2 grid grid-cols-2 gap-4">
           @foreach ($cars as $car)
           <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-            <a href="#">
+            <a href="/cars/{{ $car->slug }}">
               <div class="w-full">
                 <img src="{{ asset('img/' . $car->image) }}" alt="{{ $car->name }}" />
               </div>
             </a>
             <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-              <a href="#" class="w-full self-start">
+              <a href="/cars/{{ $car->slug }}" class="w-full self-start">
                 <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
               </a>
-              <a href="/{{ $car->slug }}" class="w-full self-end">
+              <a href="/cars/{{ $car->slug }}" class="w-full self-end">
                 <button type="button" class="w-full bg-secondary text-sm text-white py-2 px-4 rounded-md transition duration-150 hover:bg-orange-500 lg:text-base">Details Ambulance</button>
               </a>
             </div>
@@ -58,8 +58,8 @@
           <div class="px-2 flex flex-col gap-1">
             <h3 class="pl-2 border-l-2 border-l-primary font-bold text-lg">Sort By</h3>
             <form action="" class="pl-2 flex flex-col gap-2">
-              <label for="abjad" class="cursor-pointer"><input type="radio" name="sort" id="abjad" class="accent-primary" checked /> A-Z</label>
-              <label for="abjad" class="cursor-pointer"><input type="radio" name="sort" id="abjad" class="accent-primary" /> Terbaru</label>
+              <label for="alphabet" class="cursor-pointer"><input type="radio" name="sort" id="alphabet" class="accent-primary" checked /> A-Z</label>
+              <label for="latest" class="cursor-pointer"><input type="radio" name="sort" id="latest" class="accent-primary" /> Terbaru</label>
             </form>
           </div>
           <div class="px-2 flex flex-col gap-1">
@@ -93,13 +93,13 @@
           <div class="w-full grid grid-cols-3 gap-4">
             @foreach ($cars as $car)
             <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
-              <a href="#">
+              <a href="/cars/{{ $car->slug }}">
                 <div class="w-full">
                   <img src="{{ asset('img/' . $car->image) }}" alt="{{ $car->name }}" />
                 </div>
               </a>
               <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
-                <a href="#" class="w-full self-start">
+                <a href="/cars/{{ $car->slug }}" class="w-full self-start">
                   <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
                 </a>
                 <a href="/cars/{{ $car->slug }}" class="w-full self-end">

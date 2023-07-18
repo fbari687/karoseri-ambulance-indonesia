@@ -6,7 +6,8 @@
     <title>Karoseri Ambulan Indonesia</title>
     @yield('externalcss')
     <link rel="icon" href="{{ asset('img/icon.jpg') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}" /> --}}
+    @vite('resources/css/app.css')
   </head>
   <body>
     <!-- Navbar Start -->

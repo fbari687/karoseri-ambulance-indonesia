@@ -13,3 +13,9 @@
 .show {
     @apply block opacity-100 h-auto;
 }
+
+@layer base {
+    ul {
+        @apply list-disc list-inside;
+    }
+}
