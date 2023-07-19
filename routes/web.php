@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SpecController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,21 +17,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [CarController::class, 'home']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/cars', [CarController::class, 'index']);
+Route::get('/cars', [CarController::class, 'index'])->name('models');
 
 Route::get('/cars/{car:slug}', [CarController::class, 'show']);
 
-Route::get('/specs', [SpecController::class, 'index']);
+Route::get('/specs', [SpecController::class, 'index'])->name('spesifikasi');
 
 Route::get('/about', function () {
     return view('about', [
         'logo' => 'icon.png',
         'name' => 'PT. Karoseri Ambulance Indonesia'
     ]);
-});
+})->name('tentang');
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('kontak');
+
+Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/admin', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/admin/dashboard', function () {
+    return view('dashboard.dashboard');
+})->name('dashboard')->middleware('auth');

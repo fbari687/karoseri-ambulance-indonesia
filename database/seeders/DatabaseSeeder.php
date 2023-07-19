@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 use App\Models\Car;
 use App\Models\Spec;
 use App\Models\Brand;
@@ -15,6 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::create([
+            'name' => 'Administrator Karoseri Ambulance Indonesia',
+            'username' => 'adminKAI',
+            'password' => bcrypt('admin123')
+        ]);
+
         Brand::create([
             'name' => 'Hino',
         ]);

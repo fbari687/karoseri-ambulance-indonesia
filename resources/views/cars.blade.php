@@ -58,33 +58,19 @@
           <div class="px-2 flex flex-col gap-1">
             <h3 class="pl-2 border-l-2 border-l-primary font-bold text-lg">Sort By</h3>
             <form action="" class="pl-2 flex flex-col gap-2">
-              <label for="alphabet" class="cursor-pointer"><input type="radio" name="sort" id="alphabet" class="accent-primary" checked /> A-Z</label>
-              <label for="latest" class="cursor-pointer"><input type="radio" name="sort" id="latest" class="accent-primary" /> Terbaru</label>
+              <label for="latest" class="cursor-pointer"><input type="radio" name="sort" id="latest" class="accent-primary" checked/> Terbaru</label>
+              <label for="alphabet" class="cursor-pointer"><input type="radio" name="sort" id="alphabet" class="accent-primary" /> A-Z</label>
             </form>
           </div>
           <div class="px-2 flex flex-col gap-1">
             <h3 class="pl-2 border-l-2 border-l-primary font-bold text-lg">Berdasarkan Merk</h3>
             <form action="" class="pl-2 flex flex-col gap-2">
-              <label for="daihatsu">
-                <input type="checkbox" name="daihatsu" id="daihatsu" class="accent-primary" />
-                Daihatsu ()
+              @foreach ($brands as $brand)
+              <label for="{{ $brand->name }}" class="capitalize">
+                <input type="checkbox" name="{{ $brand->name }}" id="{{ $brand->name }}" class="accent-primary" />
+                {{ $brand->name }} ({{ $brand->cars->count() }})
               </label>
-              <label for="toyota">
-                <input type="checkbox" name="toyota" id="toyota" class="accent-primary" />
-                Toyota ()
-              </label>
-              <label for="honda">
-                <input type="checkbox" name="honda" id="honda" class="accent-primary" />
-                Honda ()
-              </label>
-              <label for="hyundai">
-                <input type="checkbox" name="hyundai" id="hyundai" class="accent-primary" />
-                Hyundai ()
-              </label>
-              <label for="mitsubishi">
-                <input type="checkbox" name="mitsubishi" id="mitsubishi" class="accent-primary" />
-                Mitsubishi ()
-              </label>
+              @endforeach
               <button type="submit" class="mt-4 w-1/2 bg-secondary py-2 px-4 rounded-lg text-white transition duration-150 hover:bg-orange-600">Terapkan</button>
             </form>
           </div>

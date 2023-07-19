@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Brand;
 
 class CarController extends Controller
 {
@@ -11,16 +12,11 @@ class CarController extends Controller
     {
 
         return view('cars', [
-            "cars" => Car::with('brand', 'specs')->get()
+            "cars" => Car::with('brand')->get(),
+            "brands" => Brand::with('cars')->orderBy('name', 'asc')->get()
         ]);
     }
 
-    public function home()
-    {
-        return view('home', [
-            "cars" => Car::inRandomOrder()->take(5)->get()
-        ]);
-    }
 
     public function show(Car $car)
     {
