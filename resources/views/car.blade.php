@@ -30,7 +30,7 @@
                       <h5 class="uppercase">{{ $spec->name }}</h5>
                       <button type="button" class="fa-solid fa-circle-info text-sky-500 informasi"></button>
                     </div>
-                    <a href="" class="w-1/3 border py-2 text-center text-lg flex items-center justify-center">
+                    <a href="https://wa.me/6285770080452?text=Assalamu'alaikum, Saya pengunjung website https://karoseri-ambulan.id, saya ingin informasi tentang Ambulance *{{ $car->name }}* dengan spesifikasi *{{ $spec->name }}*" class="w-1/3 border py-2 text-center text-lg flex items-center justify-center" target="_blank">
                       <div class="flex items-center gap-2 bg-[#25d366] text-white justify-center py-1 px-2 rounded-full transition duration-150 hover:bg-[#22be5b]">
                         <i class="fa-brands fa-whatsapp"></i>
                         <h5>Hubungi</h5>

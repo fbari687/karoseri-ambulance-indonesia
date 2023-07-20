@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SpecController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,10 +38,12 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('kontak');
 
+Route::get('/portfolio', function () {
+    return view('portfolio');
+});
+
 Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/admin/dashboard', function () {
-    return view('dashboard.dashboard');
-})->name('dashboard')->middleware('auth');
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');

@@ -12,7 +12,7 @@
         <span class="text-xs text-center lg:text-sm">Whatsapp</span>
       </div>
     </a>
-    <a href="#" class="w-1/4">
+    <a href="/portfolio" class="w-1/4">
       <div class="py-4 flex flex-col items-center gap-4 bg-primary text-white transition duration-150 hover:bg-red-600">
         <i class="pt-2 fa-solid fa-van-shuttle fa-xl"></i>
         <span class="text-xs text-center lg:text-sm">Portfolio</span>
