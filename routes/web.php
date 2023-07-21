@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\DashboardBrandsController;
+use App\Http\Controllers\DashboardCarsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardSpecsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SpecController;
@@ -47,3 +50,6 @@ Route::post('/admin', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/admin/dashboard/brands', [DashboardBrandsController::class, 'index']);
+Route::get('/admin/dashboard/specs', [DashboardSpecsController::class, 'index']);
+Route::get('/admin/dashboard/cars', [DashboardCarsController::class, 'index']);

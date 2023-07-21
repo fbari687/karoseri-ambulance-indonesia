@@ -12,6 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         return view('dashboard.dashboard', [
+            'title' => 'dashboard',
             'cars' => Car::all(),
             'brands' => Brand::all(),
             'specs' => Spec::all()

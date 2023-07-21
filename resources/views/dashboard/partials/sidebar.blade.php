@@ -10,11 +10,35 @@
   <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link text-white active bg-gradient-primary" href="../pages/dashboard.html">
+        <a class="nav-link text-white {{ Request::is('admin/dashboard') ? 'bg-gradient-primary' : ''}}" href="/admin/dashboard">
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">dashboard</i>
           </div>
           <span class="nav-link-text ms-1">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white {{ Request::is('admin/dashboard/brands') ? 'bg-gradient-primary' : ''}}" href="/admin/dashboard/brands">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <span class="nav-link-text ms-1">Merk</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white {{ Request::is('admin/dashboard/specs') ? 'bg-gradient-primary' : ''}}" href="/admin/dashboard/specs">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-scroll"></i>
+          </div>
+          <span class="nav-link-text ms-1">Spesifikasi</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white {{ Request::is('admin/dashboard/cars') ? 'bg-gradient-primary' : ''}}" href="/admin/dashboard/cars">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-car"></i>
+          </div>
+          <span class="nav-link-text ms-1">Model</span>
         </a>
       </li>
     </ul>
