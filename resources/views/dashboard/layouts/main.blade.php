@@ -20,6 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  @yield('externalcss')
   <title>
     Admin | Dashboard
   </title>
@@ -58,6 +59,7 @@
   </script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('js/material-dashboard.min.js') }}"></script>
+  @yield('scriptjs')
 </body>
 
 </html>

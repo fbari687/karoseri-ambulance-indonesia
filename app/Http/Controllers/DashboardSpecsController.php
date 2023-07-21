@@ -12,7 +12,7 @@ class DashboardSpecsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.specs', [
+        return view('dashboard.specs.index', [
             'title' => 'specs',
             'specs' => Spec::all()
         ]);

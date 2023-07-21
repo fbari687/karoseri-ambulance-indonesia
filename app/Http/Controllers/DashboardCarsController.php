@@ -14,7 +14,7 @@ class DashboardCarsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.cars', [
+        return view('dashboard.cars.index', [
             'title' => 'Models',
             "cars" => Car::with('brand', 'specs')->get(),
         ]);

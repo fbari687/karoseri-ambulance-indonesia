@@ -9,6 +9,7 @@
         <tr>
           <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">#</th>
           <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Nama</th>
+          <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Foto</th>
           <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Brand</th>
           <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Spesifikasi</th>
           <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">Action</th>
@@ -24,6 +25,9 @@
           </td>
           <td>
             <p class="text-sm font-weight-bold mb-0">{{ $car->name }}</p>
+          </td>
+          <td>
+            <img src="{{ asset('img/' . $car->image) }}" alt="" width="200px">
           </td>
           <td>
             <p class="text-sm font-weight-bold mb-0">{{ $car->brand->name }}</p>

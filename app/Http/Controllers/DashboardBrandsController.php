@@ -12,7 +12,7 @@ class DashboardBrandsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.brands', [
+        return view('dashboard.brands.index', [
             'title' => 'brands',
             'brands' => Brand::all(),
         ]);
@@ -23,7 +23,9 @@ class DashboardBrandsController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.brands.create', [
+            'title' => 'Merk'
+        ]);
     }
 
     /**
@@ -31,7 +33,12 @@ class DashboardBrandsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255'
+        ]);
+
+        Brand::create($validatedData);
+        return redirect('/admin/dashboard/brands')->with('success', 'Menambahkan Merk Baru');
     }
 
     /**
@@ -47,7 +54,10 @@ class DashboardBrandsController extends Controller
      */
     public function edit(Brand $brand)
     {
-        //
+        return view('dashboard.brands.edit', [
+            'title' => 'Merk',
+            'brand' => $brand
+        ]);
     }
 
     /**
@@ -55,7 +65,14 @@ class DashboardBrandsController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255'
+        ]);
+
+        Brand::where('id', $brand->id)
+            ->update($validatedData);
+
+        return redirect('/admin/dashboard/brands')->with('success', 'MengEdit Brand');
     }
 
     /**
@@ -63,6 +80,7 @@ class DashboardBrandsController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+        Brand::destroy($brand->id);
+        return redirect('/admin/dashboard/brands')->with('success', 'Menghapus Merk');
     }
 }

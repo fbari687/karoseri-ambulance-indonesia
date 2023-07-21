@@ -50,6 +50,6 @@ Route::post('/admin', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::get('/admin/dashboard/brands', [DashboardBrandsController::class, 'index']);
-Route::get('/admin/dashboard/specs', [DashboardSpecsController::class, 'index']);
-Route::get('/admin/dashboard/cars', [DashboardCarsController::class, 'index']);
+Route::resource('/admin/dashboard/brands', DashboardBrandsController::class)->middleware('auth');
+Route::resource('/admin/dashboard/specs', DashboardSpecsController::class)->middleware('auth');
+Route::resource('/admin/dashboard/cars', DashboardCarsController::class)->middleware('auth');

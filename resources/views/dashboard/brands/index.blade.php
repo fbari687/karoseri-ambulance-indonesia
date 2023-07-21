@@ -1,7 +1,13 @@
 @extends('dashboard.layouts.main')
 
 @section('content')
-<a href="" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Merk Baru</a>
+<a href="/admin/dashboard/brands/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Merk Baru</a>
+@if (session()->has('success'))
+<div class="col-lg-3 alert alert-success text-white" role="alert">
+  <strong>Berhasil!</strong> {{ session('success') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="card">
   <div class="table-responsive">
     <table class="table table-striped align-items-center mb-0">
@@ -24,8 +30,12 @@
             <p class="text-sm font-weight-bold mb-0">{{ $brand->name }}</p>
           </td>
           <td>
-            <a href="" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
-            <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+            <a href="/admin/dashboard/brands/{{ $brand->id }}/edit" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
+            <form action="/admin/dashboard/brands/{{ $brand->id }}" method="POST" class="d-inline-block">
+              @method('delete')
+              @csrf
+              <button type="submit" onclick="return confirm('Yakin Hapus Merk {{ $brand->name }}?')" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+            </form>
           </td>
         </tr>
         @endforeach
