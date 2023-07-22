@@ -52,4 +52,5 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::resource('/admin/dashboard/brands', DashboardBrandsController::class)->middleware('auth');
 Route::resource('/admin/dashboard/specs', DashboardSpecsController::class)->middleware('auth');
+Route::get('/admin/dashboard/cars/checkSlug', [DashboardCarsController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/dashboard/cars', DashboardCarsController::class)->middleware('auth');

@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.main')
 
 @section('content')
-<a href="" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Model Baru</a>
+<a href="/admin/dashboard/cars/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Model Baru</a>
 <div class="card">
   <div class="table-responsive">
     <table class="table table-striped align-items-center mb-0">
@@ -27,7 +27,7 @@
             <p class="text-sm font-weight-bold mb-0">{{ $car->name }}</p>
           </td>
           <td>
-            <img src="{{ asset('img/' . $car->image) }}" alt="" width="200px">
+            <img src="{{ asset('storage/'.$car->image) }}" alt="" width="200px">
           </td>
           <td>
             <p class="text-sm font-weight-bold mb-0">{{ $car->brand->name }}</p>

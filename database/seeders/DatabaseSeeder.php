@@ -63,50 +63,50 @@ class DatabaseSeeder extends Seeder
             'body' => "<div><strong>Deskripsi:</strong></div><ul><li>Lampu LED Light Bar Oval LTF 2200</li><li>Sirene multi suara lengkap dengan microphone</li><li>Tempat duduk perawat dilengkapi dengan box peralatan</li><li>Tabung pemadam kebakaran kapasitas 1 Kg</li><li>Lampu sorot belakang model spot light</li><li>Modifikasi lantai dari polywood dilapis dengan vinyl</li><li>Logo dan tulisan standard</li><li>Kaca film 60% - 80%</li><li>Keranda Jenazah kontruksi rangka full Stainles Steel sekaligus Kain penutup warna hijau</li></ul>"
         ]);
 
-        Car::create([
-            'brand_id' => 1,
-            'name' => 'Hino Dutro Short',
-            'slug' => 'hino-dutro-short',
-            'image' => 'product-1.jpg'
-        ]);
-        Car::create([
-            'brand_id' => 2,
-            'name' => 'Mitsubishi Strada Triton',
-            'slug' => 'mitsubishi-strada-triton',
-            'image' => 'product-2.jpg'
-        ]);
-        Car::create([
-            'brand_id' => 3,
-            'name' => 'Kia Travello',
-            'slug' => 'kia-travello',
-            'image' => 'product-3.jpg'
-        ]);
-        Car::create([
-            'brand_id' => 2,
-            'name' => 'Mitsubishi L300',
-            'slug' => 'mitsubishi-l300',
-            'image' => 'product-4.jpg'
-        ]);
-        Car::create([
-            'brand_id' => 4,
-            'name' => 'DFSK Super Cab',
-            'slug' => 'dfsk-super-cab',
-            'image' => 'product-5.jpg'
-        ]);
+        // Car::create([
+        //     'brand_id' => 1,
+        //     'name' => 'Hino Dutro Short',
+        //     'slug' => 'hino-dutro-short',
+        //     'image' => 'product-1.jpg'
+        // ]);
+        // Car::create([
+        //     'brand_id' => 2,
+        //     'name' => 'Mitsubishi Strada Triton',
+        //     'slug' => 'mitsubishi-strada-triton',
+        //     'image' => 'product-2.jpg'
+        // ]);
+        // Car::create([
+        //     'brand_id' => 3,
+        //     'name' => 'Kia Travello',
+        //     'slug' => 'kia-travello',
+        //     'image' => 'product-3.jpg'
+        // ]);
+        // Car::create([
+        //     'brand_id' => 2,
+        //     'name' => 'Mitsubishi L300',
+        //     'slug' => 'mitsubishi-l300',
+        //     'image' => 'product-4.jpg'
+        // ]);
+        // Car::create([
+        //     'brand_id' => 4,
+        //     'name' => 'DFSK Super Cab',
+        //     'slug' => 'dfsk-super-cab',
+        //     'image' => 'product-5.jpg'
+        // ]);
 
-        $car1 = Car::find(1);
-        $car1->specs()->attach([1, 2]);
+        // $car1 = Car::find(1);
+        // $car1->specs()->attach([1, 2]);
 
-        $car2 = Car::find(2);
-        $car2->specs()->attach([3, 4]);
+        // $car2 = Car::find(2);
+        // $car2->specs()->attach([3, 4]);
 
-        $car3 = Car::find(3);
-        $car3->specs()->attach([4, 5]);
+        // $car3 = Car::find(3);
+        // $car3->specs()->attach([4, 5]);
 
-        $car4 = Car::find(4);
-        $car4->specs()->attach([1, 3]);
+        // $car4 = Car::find(4);
+        // $car4->specs()->attach([1, 3]);
 
-        $car5 = Car::find(5);
-        $car5->specs()->attach([1, 2, 3, 4, 5]);
+        // $car5 = Car::find(5);
+        // $car5->specs()->attach([1, 2, 3, 4, 5]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\Brand;
 use App\Models\Spec;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
 class DashboardCarsController extends Controller
@@ -25,7 +26,11 @@ class DashboardCarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.cars.create', [
+            'title' => 'Model',
+            'brands' => Brand::orderBy('name', 'asc')->get(),
+            'specs' => Spec::orderBy('name', 'asc')->get()
+        ]);
     }
 
     /**
@@ -33,7 +38,26 @@ class DashboardCarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'brand_id' => 'required|exists:brands,id',
+            'name' => 'required|string|max:255',
+            'slug' => 'required|unique:cars,slug|max:255',
+            'image' => 'image|file|max:2048',
+            'specs' => 'array',
+            'specs.*' => 'exists:specs,id'
+        ]);
+
+        $car = Car::create([
+            'brand_id' => $request->input('brand_id'),
+            'name' => $request->input('name'),
+            'slug' => $request->input('slug'),
+            'image' => $request->file('image')->store('product-image')
+        ]);
+
+        if ($request->has('specs')) {
+            $specs = $request->input('specs');
+            $car->specs()->attach($specs);
+        }
     }
 
     /**
@@ -66,5 +90,11 @@ class DashboardCarsController extends Controller
     public function destroy(Car $car)
     {
         //
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Car::class, 'slug', $request->name);
+        return response()->json(['slug' => $slug]);
     }
 }

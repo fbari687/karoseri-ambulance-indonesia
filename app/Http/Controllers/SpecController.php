@@ -10,7 +10,7 @@ class SpecController extends Controller
     public function index()
     {
         return view('specs', [
-            "specs" => Spec::latest()->get()
+            "specs" => Spec::oldest()->get()
         ]);
     }
 }

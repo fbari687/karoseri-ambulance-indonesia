@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Brand;
 use App\Models\Spec;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 
 class Car extends Model
 {
+    use Sluggable;
     use HasFactory;
 
     protected $guarded = ['id'];
@@ -23,5 +25,14 @@ class Car extends Model
     public function specs()
     {
         return $this->belongsToMany(Spec::class);
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
     }
 }
