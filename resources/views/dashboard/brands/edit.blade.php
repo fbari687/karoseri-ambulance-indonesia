@@ -9,6 +9,9 @@
       <div class="input-group input-group-outline my-3">
         <input type="text" class="form-control" id="name" name="name" placeholder="nama" value="{{ old('name',  $brand->name)}}">
       </div>
+      @error('name')
+          <div class="text-danger">{{ $message }}</div>
+        @enderror
       <button type="submit" class="col-lg-2 btn btn-info align-self-end">Edit {{ $title }}</button>
     </form>
   </div>

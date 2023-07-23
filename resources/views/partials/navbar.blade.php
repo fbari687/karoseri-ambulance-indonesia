@@ -17,7 +17,7 @@
             </a>
           </div>
           <div class="px-2 text-white transition duration-150 hover:font-bold">
-            <a href="/cars">
+            <a href="/cars?sortBy=latest">
               <div class="w-full rounded-lg">Model</div>
             </a>
           </div>
@@ -49,7 +49,7 @@
       <a href="/" class="h-full group">
         <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('/') ? 'active-navbar' : '' }}">Beranda</div>
       </a>
-      <a href="/cars" class="h-full group">
+      <a href="/cars?sortBy=latest" class="h-full group">
         <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('cars*') ? 'active-navbar' : '' }}">Model</div>
       </a>
       <a href="/specs" class="h-full group">

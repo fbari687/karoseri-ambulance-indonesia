@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Spec;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardCarsController extends Controller
 {
@@ -49,7 +50,7 @@ class DashboardCarsController extends Controller
 
         $car = Car::create([
             'brand_id' => $request->input('brand_id'),
-            'name' => $request->input('name'),
+            'name' => ucwords($request->input('name')),
             'slug' => $request->input('slug'),
             'image' => $request->file('image')->store('product-image')
         ]);
@@ -58,6 +59,8 @@ class DashboardCarsController extends Controller
             $specs = $request->input('specs');
             $car->specs()->attach($specs);
         }
+
+        return redirect('/admin/dashboard/cars')->with('success', 'Menambah Model Mobil');
     }
 
     /**
@@ -73,7 +76,12 @@ class DashboardCarsController extends Controller
      */
     public function edit(Car $car)
     {
-        //
+        return view('dashboard.cars.edit', [
+            'title' => 'Models',
+            'car' => $car,
+            'brands' => Brand::orderBy('name', 'asc')->get(),
+            'specs' => Spec::orderBy('name', 'asc')->get()
+        ]);
     }
 
     /**
@@ -89,7 +97,13 @@ class DashboardCarsController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        if ($car->image) {
+            Storage::delete($car->image);
+        }
+
+        $car = Car::findOrFail($car->id);
+        $car->delete();
+        return redirect('/admin/dashboard/cars')->with('success', 'Menghapus Model Mobil');
     }
 
     public function checkSlug(Request $request)

@@ -24,7 +24,7 @@ class DashboardBrandsController extends Controller
     public function create()
     {
         return view('dashboard.brands.create', [
-            'title' => 'Brand'
+            'title' => 'Brands'
         ]);
     }
 
@@ -55,7 +55,7 @@ class DashboardBrandsController extends Controller
     public function edit(Brand $brand)
     {
         return view('dashboard.brands.edit', [
-            'title' => 'Brand',
+            'title' => 'Brands',
             'brand' => $brand
         ]);
     }

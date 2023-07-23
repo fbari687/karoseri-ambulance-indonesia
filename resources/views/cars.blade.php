@@ -5,7 +5,7 @@
   <section id="judul">
     <div class="container mx-auto">
       <div class="py-8 px-4 bg-gradient-to-br from-primary to-secondary">
-        <h2 class="font-bold text-xl text-white lg:text-3xl">MODEL</h2>
+        <h2 class="font-bold text-xl text-white lg:text-3xl">SEMUA MODEL</h2>
         <span class="text-white text-sm">Model yang didukung Karoseri Ambulance Indonesia</span>
       </div>
     </div>
@@ -23,8 +23,9 @@
             <div class="flex flex-col gap-2">
               <h2 class="font-bold text-base border-l border-l-primary px-2">Sort By</h2>
               <form action="" class="flex flex-col gap-2 px-2">
-                <label for="abjad" class="cursor-pointer"><input type="radio" name="sort" id="abjad" class="accent-primary" checked /> A-Z</label>
-                <label for="newest" class="cursor-pointer"><input type="radio" name="sort" id="newest" class="accent-primary" /> Terbaru</label>
+                <label for="latest" class="cursor-pointer"><input type="radio" name="sortBy" id="latest" value="latest" class="accent-primary" @if ($sortBy == 'latest') checked @endif/> Terbaru</label>
+                <label for="alphabet" class="cursor-pointer"><input type="radio" name="sortBy" id="alphabet" value="alphabet" class="accent-primary" @if ($sortBy == 'alphabet') checked @endif /> A-Z</label>
+                <button type="submit" class="mt-4 w-full bg-secondary py-2 px-4 rounded-lg text-white transition duration-150 hover:bg-orange-600">Terapkan</button>
               </form>
             </div>
           </div>
@@ -35,7 +36,7 @@
           <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
             <a href="/cars/{{ $car->slug }}">
               <div class="w-full">
-                <img src="{{ asset('img/' . $car->image) }}" alt="{{ $car->name }}" />
+                <img src="{{ asset('storage/'.$car->image) }}" alt="{{ $car->name }}" />
               </div>
             </a>
             <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
@@ -53,35 +54,35 @@
       </div>
       <!-- Model Desktop Start -->
       <div class="hidden w-full bg-white rounded-lg lg:flex gap-0">
-        <div class="w-1/5 flex flex-col py-4 px-4 gap-4">
+        <form action="" class="w-1/5 flex flex-col py-4 px-4 gap-4">
           <h2 class="text-2xl font-bold">Filter</h2>
           <div class="px-2 flex flex-col gap-1">
             <h3 class="pl-2 border-l-2 border-l-primary font-bold text-lg">Sort By</h3>
-            <form action="" class="pl-2 flex flex-col gap-2">
-              <label for="latest" class="cursor-pointer"><input type="radio" name="sort" id="latest" class="accent-primary" checked/> Terbaru</label>
-              <label for="alphabet" class="cursor-pointer"><input type="radio" name="sort" id="alphabet" class="accent-primary" /> A-Z</label>
-            </form>
+            <div class="pl-2 flex flex-col gap-2">
+              <label for="terbaru" class="cursor-pointer"><input type="radio" name="sortBy" id="terbaru" value="latest" class="accent-primary" @if ($sortBy == 'latest') checked @endif/> Terbaru</label>
+              <label for="abjad" class="cursor-pointer"><input type="radio" name="sortBy" id="abjad" value="alphabet" class="accent-primary" @if ($sortBy == 'alphabet') checked @endif /> A-Z</label>
+            </div>
           </div>
           <div class="px-2 flex flex-col gap-1">
             <h3 class="pl-2 border-l-2 border-l-primary font-bold text-lg">Berdasarkan Merk</h3>
-            <form action="" class="pl-2 flex flex-col gap-2">
+            <div class="pl-2 flex flex-col gap-2">
               @foreach ($brands as $brand)
-              <label for="{{ $brand->name }}" class="capitalize">
-                <input type="checkbox" name="{{ $brand->name }}" id="{{ $brand->name }}" class="accent-primary" />
+              <label for="{{ $brand->name }}" class="capitalize cursor-pointer">
+                <input type="radio" name="brand_id" value="{{ $brand->id }}" id="{{ $brand->name }}" class="accent-primary" @if ($selectedBrandId == $brand->id) checked @endif>
                 {{ $brand->name }} ({{ $brand->cars->count() }})
               </label>
               @endforeach
               <button type="submit" class="mt-4 w-1/2 bg-secondary py-2 px-4 rounded-lg text-white transition duration-150 hover:bg-orange-600">Terapkan</button>
-            </form>
+            </div>
           </div>
-        </div>
+        </form>
         <div class="w-4/5 border-l border-l-divider p-4">
           <div class="w-full grid grid-cols-3 gap-4">
             @foreach ($cars as $car)
             <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
               <a href="/cars/{{ $car->slug }}">
                 <div class="w-full">
-                  <img src="{{ asset('img/' . $car->image) }}" alt="{{ $car->name }}" />
+                  <img src="{{ asset('storage/'.$car->image) }}" alt="{{ $car->name }}" />
                 </div>
               </a>
               <div class="w-full h-36 p-2 flex flex-col items-center justify-between">

@@ -34,7 +34,7 @@
             <form action="/admin/dashboard/brands/{{ $brand->id }}" method="POST" class="d-inline-block">
               @method('delete')
               @csrf
-              <button type="submit" onclick="return confirm('Yakin Hapus Merk {{ $brand->name }}?')" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+              <button type="submit" onclick="return confirm('Yakin Hapus Merk {{ $brand->name }}? Akan Menghilangkan Semua Mobil dengan Merk {{ $brand->name }}')" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
             </form>
           </td>
         </tr>

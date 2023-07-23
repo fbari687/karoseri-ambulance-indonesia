@@ -8,13 +8,28 @@ use App\Models\Brand;
 
 class CarController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
 
-        return view('cars', [
-            "cars" => Car::with('brand')->get(),
-            "brands" => Brand::with('cars')->orderBy('name', 'asc')->get()
-        ]);
+        $brands = Brand::all();
+        $selectedBrandId = $request->query('brand_id');
+        $sortBy = $request->query('sortBy');
+
+        $carsQuery = Car::query();
+
+        if ($selectedBrandId) {
+            $carsQuery->where('brand_id', $selectedBrandId);
+        }
+
+        if ($sortBy == 'alphabet') {
+            $carsQuery->orderBy('name', 'asc');
+        } elseif ($sortBy == 'latest') {
+            $carsQuery->latest();
+        }
+
+        $cars = $carsQuery->get();
+
+        return view('cars', compact('cars', 'brands', 'selectedBrandId', 'sortBy'));
     }
 
 

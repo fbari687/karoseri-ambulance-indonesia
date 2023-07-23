@@ -15,8 +15,14 @@
         <div class="input-group input-group-outline my-3">
           <input type="text" class="form-control" id="name" name="name" placeholder="nama" value="{{old('name', $spec->name )}}">
         </div>
+        @error('name')
+          <div class="text-danger">{{ $message }}</div>
+        @enderror
       </div>
       <label for="body" class="form-label fw-bold">Deskripsi</label>
+      @error('body')
+          <div class="text-danger">{{ $message }}</div>
+        @enderror
       <input id="body" type="hidden" name="body" value="{{old('body', $spec->body)}}">
       <trix-editor input="body"></trix-editor>
       <button type="submit" class="col-lg-2 btn btn-info align-self-end">Edit</button>

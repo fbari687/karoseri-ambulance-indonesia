@@ -24,7 +24,7 @@ class DashboardSpecsController extends Controller
     public function create()
     {
         return view('dashboard.specs.create', [
-            'title' => 'Spesifikasi',
+            'title' => 'Specs',
         ]);
     }
 
@@ -33,12 +33,15 @@ class DashboardSpecsController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'name' => 'required|max:255',
             'body' => 'required'
         ]);
 
-        Spec::create($validatedData);
+        Spec::create([
+            'name' => strtoupper($request->input('name')),
+            'body' => $request->input('body')
+        ]);
 
         return redirect('/admin/dashboard/specs')->with('success', 'Menambah Spesifikasi');
     }
@@ -58,7 +61,7 @@ class DashboardSpecsController extends Controller
     {
         return view('dashboard.specs.edit', [
             'spec' => $spec,
-            'title' => 'Spesifikasi'
+            'title' => 'Specs'
         ]);
     }
 
