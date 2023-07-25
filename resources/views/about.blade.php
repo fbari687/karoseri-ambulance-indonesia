@@ -4,9 +4,9 @@
   <!-- Judul Start -->
   <section id="judul">
     <div class="container mx-auto">
-      <div class="py-8 px-4 bg-gradient-to-br from-primary to-secondary">
+      <div class="py-4 px-4 bg-secondary">
         <h2 class="font-bold text-xl text-white lg:text-3xl">Tentang Kami</h2>
-        <span class="text-white text-sm">Mengetahui Lebih Dalam Tentang Karoseri Ambulance Indonesia</span>
+        <span class="text-dark text-base">Mengetahui Lebih Dalam Tentang Karoseri Ambulance Indonesia</span>
       </div>
     </div>
   </section>

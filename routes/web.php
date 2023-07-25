@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\DashboardBrandsController;
+use App\Http\Controllers\DashboardCarouselsController;
 use App\Http\Controllers\DashboardCarsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardSpecsController;
@@ -54,3 +55,4 @@ Route::resource('/admin/dashboard/brands', DashboardBrandsController::class)->mi
 Route::resource('/admin/dashboard/specs', DashboardSpecsController::class)->middleware('auth');
 Route::get('/admin/dashboard/cars/checkSlug', [DashboardCarsController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/dashboard/cars', DashboardCarsController::class)->middleware('auth');
+Route::resource('/admin/dashboard/carousels', DashboardCarouselsController::class)->middleware('auth');

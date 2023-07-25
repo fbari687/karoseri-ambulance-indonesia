@@ -41,6 +41,14 @@
           <span class="nav-link-text ms-1">Model</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link text-white {{ Request::is('admin/dashboard/carousels*') ? 'bg-gradient-primary' : ''}}" href="/admin/dashboard/carousels">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-images"></i>
+          </div>
+          <span class="nav-link-text ms-1">Carousel</span>
+        </a>
+      </li>
     </ul>
   </div>
 </aside>

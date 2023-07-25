@@ -72,7 +72,7 @@ class DashboardBrandsController extends Controller
         Brand::where('id', $brand->id)
             ->update($validatedData);
 
-        return redirect('/admin/dashboard/brands')->with('success', 'MengEdit Brand');
+        return redirect('/admin/dashboard/brands')->with('success', 'Edit Brand');
     }
 
     /**

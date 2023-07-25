@@ -12,12 +12,11 @@
       <div id="hero-carousel" class="splide" role="group">
         <div class="splide__track">
           <ul class="splide__list">
+            @foreach ($carousels as $carousel)
             <li class="splide__slide">
-              <img src="{{ asset('img/carousel.jpg') }}" alt="" />
+              <img src="{{ asset('storage/'.$carousel->image) }}" alt="" />
             </li>
-            <li class="splide__slide">
-              <img src="{{ asset('img/carousel2.jpg') }}" alt="" />
-            </li>
+            @endforeach
           </ul>
         </div>
       </div>
@@ -27,37 +26,37 @@
   <!-- Keunggulan Section Start -->
   <section id="keunggulan" class="w-full" data-aos="zoom-in" data-aos-duration="1000">
     <div class="container mx-auto mt-8">
-      <div class="px-4 py-8 bg-slate-200 rounded-xl flex flex-col gap-16">
+      <div class="px-8 py-8 bg-white flex flex-col gap-16">
         <div class="w-full flex items-center justify-center">
-          <h3 class="pb-4 text-3xl text-center font-bold border-b-2 border-b-primary lg:text-4xl">Mengapa Harus Menggunakan Jasa <span class="text-primary font-bold">KAI</span>?</h3>
+          <h3 class="pb-4 text-3xl text-center font-bold border-b-2 border-b-secondary lg:text-4xl">Mengapa Harus Menggunakan Jasa <span class="text-secondary font-bold">KAI</span>?</h3>
         </div>
         <div class="flex flex-col gap-14 items-center lg:flex-row lg:items-start">
           <div class="w-full py-2 px-1 flex flex-col items-center gap-6 font-bold lg:w-1/4">
             <i class="fa-solid fa-truck-fast fa-2xl text-secondary"></i>
             <div class="flex flex-col gap-2">
               <h3 class="text-xl font-bold text-center text-tertiary">Pengiriman ke Seluruh Indonesia</h3>
-              <p class="text-base text-center font-normal"><span class="text-primary font-bold">KAI</span> memberikan layanan pengiriman pesanan melalui Ekspedisi Kargo ke Seluruh Indonesia.</p>
+              <p class="text-base text-center font-normal"><span class="text-secondary font-bold">KAI</span> memberikan layanan pengiriman pesanan melalui Ekspedisi Kargo ke Seluruh Indonesia.</p>
             </div>
           </div>
           <div class="w-full py-2 px-1 flex flex-col items-center gap-6 font-bold lg:w-1/4">
             <i class="fa-solid fa-car fa-2xl text-secondary"></i>
             <div class="flex flex-col gap-2">
               <h3 class="text-xl font-bold text-center text-tertiary">Banyak Tipe Karoseri</h3>
-              <p class="text-base text-center font-normal"><span class="text-primary font-bold">KAI</span> Melayani pembuatan mobil promkes, mobil X-Ray, mobil dental, mobil donor darah, dan mobil pusling, food Truck, Bus, Dll.</p>
+              <p class="text-base text-center font-normal"><span class="text-secondary font-bold">KAI</span> Melayani pembuatan mobil promkes, mobil X-Ray, mobil dental, mobil donor darah, dan mobil pusling, food Truck, Bus, Dll.</p>
             </div>
           </div>
           <div class="w-full py-2 px-1 flex flex-col items-center gap-6 font-bold lg:w-1/4">
             <i class="fa-solid fa-shield-halved fa-2xl text-secondary"></i>
             <div class="flex flex-col gap-2">
               <h3 class="text-xl font-bold text-center text-tertiary">Produk Berkualitas tinggi</h3>
-              <p class="text-base text-center font-normal">Produk <span class="text-primary font-bold">KAI</span> dibuat dengan bahan dan kualitas yang terjamin, sehingga menghasilkan produk terbaik yang memiliki ketahanan tinggi.</p>
+              <p class="text-base text-center font-normal">Produk <span class="text-secondary font-bold">KAI</span> dibuat dengan bahan dan kualitas yang terjamin, sehingga menghasilkan produk terbaik yang memiliki ketahanan tinggi.</p>
             </div>
           </div>
           <div class="w-full py-2 px-1 flex flex-col items-center gap-6 font-bold lg:w-1/4">
             <i class="fa-solid fa-award fa-2xl text-secondary"></i>
             <div class="flex flex-col gap-2">
               <h3 class="text-xl font-bold text-center text-tertiary">Pengalaman Lebih Dari 10 Tahun</h3>
-              <p class="text-base text-center font-normal"><span class="text-primary font-bold">KAI</span> telah menjalani aktivitas produksi sejak tahun 2003.</p>
+              <p class="text-base text-center font-normal"><span class="text-secondary font-bold">KAI</span> telah menjalani aktivitas produksi sejak tahun 2003.</p>
             </div>
           </div>
         </div>
@@ -66,7 +65,7 @@
   </section>
   <!-- Keunggulan Section End -->
   <!-- Model Section Start -->
-  <section id="model" class="w-full" data-aos="fade-left" data-aos-duration="1000">
+  <section id="model" class="w-full" data-aos="zoom-in" data-aos-duration="1000">
     <div class="container mx-auto">
       <div class="pt-6 px-4 flex flex-col gap-4">
         <div class="flex items-center justify-between">
@@ -84,10 +83,10 @@
                   <div class="flex flex-col items-center overflow-hidden rounded-xl bg-white border shadow-md-right">
                     <a href="/cars/{{ $car->slug }}">
                       <div class="w-full">
-                        <img src="{{ asset('img/'. $car->image) }}" alt="" />
+                        <img src="{{ asset('storage/'. $car->image) }}" alt="" />
                       </div>
                     </a>
-                    <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
+                    <div class="w-full h-28 p-2 flex flex-col items-center justify-between">
                       <a href="/cars/{{ $car->slug }}" class="w-full self-start">
                         <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
                       </a>

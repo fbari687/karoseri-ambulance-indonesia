@@ -4,7 +4,7 @@
   <!-- Judul Model Start -->
   <section id="judul">
     <div class="container mx-auto">
-      <div class="py-8 px-4 bg-gradient-to-br from-primary to-secondary">
+      <div class="py-4 px-4 bg-secondary">
         <h2 class="font-bold text-xl text-white lg:text-3xl">SEMUA MODEL</h2>
         <span class="text-white text-sm">Model yang didukung Karoseri Ambulance Indonesia</span>
       </div>
@@ -85,7 +85,7 @@
                   <img src="{{ asset('storage/'.$car->image) }}" alt="{{ $car->name }}" />
                 </div>
               </a>
-              <div class="w-full h-36 p-2 flex flex-col items-center justify-between">
+              <div class="w-full h-28 p-2 flex flex-col items-center justify-between">
                 <a href="/cars/{{ $car->slug }}" class="w-full self-start">
                   <h3 class="text-base text-primary font-bold text-center lg:text-xl">{{ $car->name }}</h3>
                 </a>

@@ -14,7 +14,7 @@
     @include('partials.navbar')
     <!-- Navbar End -->
     <!-- Content Start -->
-    <section id="content" class="mt-[70px] max-w-[1366px] mx-auto mb-8">
+    <section id="content" class="mt-[70px] mb-8">
       @yield('content')
     </section>
     <!-- Content End -->

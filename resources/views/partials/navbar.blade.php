@@ -10,7 +10,7 @@
         <i class="fa-solid fa-bars"></i>
       </button>
       <div id="dropdownNav" class="hidden right-3 top-10 absolute w-64 text-black">
-        <div class="px-4 py-2 max-w-[250px] w-full bg-secondary flex flex-col gap-5 rounded-tl-lg rounded-b-lg">
+        <div class="px-4 py-2 max-w-[250px] w-full bg-dark flex flex-col gap-5 rounded-tl-lg rounded-b-lg items-center justify-center">
           <div class="px-2 text-white transition duration-150 hover:font-bold">
             <a href="/">
               <div class="w-full rounded-lg">Home</div>
@@ -36,7 +36,7 @@
               <div class="w-full rounded-lg">Kontak</div>
             </a>
           </div>
-          <div class="px-2 py-2 text-white bg-tertiary rounded-md transition duration-150 hover:font-bold">
+          <div class="w-full px-2 py-2 text-white bg-secondary rounded-md transition duration-150 text-center hover:font-bold">
             <a href="wa.me">
               <div class="w-full rounded-lg">Minta Penawaran</div>
             </a>
@@ -45,23 +45,23 @@
       </div>
     </div>
 
-    <div class="hidden lg:flex gap-6">
+    <div class="hidden lg:flex gap-2">
       <a href="/" class="h-full group">
-        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('/') ? 'active-navbar' : '' }}">Beranda</div>
+        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-secondary group-hover:text-white rounded-md {{ Request::is('/') ? 'active-navbar' : '' }}">Beranda</div>
       </a>
       <a href="/cars?sortBy=latest" class="h-full group">
-        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('cars*') ? 'active-navbar' : '' }}">Model</div>
+        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-secondary group-hover:text-white rounded-md {{ Request::is('cars*') ? 'active-navbar' : '' }}">Model</div>
       </a>
       <a href="/specs" class="h-full group">
-        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('specs') ? 'active-navbar' : '' }}">Spesifikasi</div>
+        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-secondary group-hover:text-white rounded-md {{ Request::is('specs') ? 'active-navbar' : '' }}">Spesifikasi</div>
       </a>
       <a href="/about" class="h-full group">
-        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('about') ? 'active-navbar' : '' }}">Tentang Kami</div>
+        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-secondary group-hover:text-white rounded-md {{ Request::is('about') ? 'active-navbar' : '' }}">Tentang Kami</div>
       </a>
       <a href="/contact" class="h-full group">
-        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-red-500 group-hover:text-white rounded-md {{ Request::is('contact') ? 'active-navbar' : '' }}">Kontak</div>
+        <div class="py-2 px-5 text-lg transition duration-150 group-hover:bg-secondary group-hover:text-white rounded-md {{ Request::is('contact') ? 'active-navbar' : '' }}">Kontak</div>
       </a>
-      <a href="wa.me" class="h-full group">
+      <a href="https://wa.me/6281287624559?text=Assalamu'alaikum, Saya pengunjung website https://karoseri-ambulan.id, saya ingin minta penawaran" class="h-full group">
         <div class="py-2 px-5 text-lg transition duration-150 bg-secondary text-white group-hover:bg-[#d77d1c] rounded-md">Minta Penawaran</div>
       </a>
     </div>

@@ -70,7 +70,17 @@ class DashboardSpecsController extends Controller
      */
     public function update(Request $request, Spec $spec)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'body' => 'required'
+        ]);
+
+        Spec::where('id', $spec->id)->update([
+            'name' => strtoupper($request->input('name')),
+            'body' => $request->input('body')
+        ]);
+
+        return redirect('/admin/dashboard/specs')->with('success', 'Mengubah Spesifikasi');
     }
 
     /**

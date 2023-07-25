@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active-navbar {
-    @apply border-b border-b-primary;
+    @apply border-b border-b-secondary;
 }
 
 .hide {

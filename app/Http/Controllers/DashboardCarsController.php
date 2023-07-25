@@ -89,7 +89,43 @@ class DashboardCarsController extends Controller
      */
     public function update(Request $request, Car $car)
     {
-        //
+        $rules = [
+            'brand_id' => 'required|exists:brands,id',
+            'image' => 'image|file|max:2048',
+            'specs' => 'array',
+            'specs.*' => 'exists:specs,id'
+        ];
+
+        if ($request->slug != $car->slug) {
+            $rules['slug'] = 'required|unique:cars,slug';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file("image")->store('product-image');
+        }
+
+        $validatedData['name'] = ucwords($request->name);
+
+        if ($request->slug != $car->slug && Car::where('slug', $request->slug)->exists()) {
+            return back()->withErrors(['slug' => 'The slug has already been taken.']);
+        }
+
+        $car->fill($validatedData);
+        $car->save();
+
+        if ($request->has('specs')) {
+            $specs = $request->specs;
+            $car->specs()->sync($specs);
+        } else {
+            $car->specs()->detach();
+        }
+
+        return redirect('/admin/dashboard/cars')->with('success', 'Mengubah Model');
     }
 
     /**

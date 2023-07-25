@@ -13,6 +13,7 @@ module.exports = {
                 tertiary: "#2c3891",
                 divider: "#d9d9d9",
                 dark: "#161616",
+                "dark-transparent": "rgba(22,22,22,0.80)",
             },
             boxShadow: {
                 "md-right": "9px 8px 18px -13px rgba(0,0,0,0.53);",

@@ -6,7 +6,7 @@
     <div class="container w-full mx-auto">
       <div class="w-full grid grid-cols-1 gap-5">
         <div class="w-full flex flex-col gap-5">
-          <img src="{{ asset('img/' . $car->image) }}" alt="product" class="w-full" />
+          <img src="{{ asset('storage/' . $car->image) }}" alt="product" class="w-full" />
           <h6 class="px-3 uppercase text-primary text-xs">
             <a href="/"><span class="text-dark">home</span></a> // <a href="/cars"><span class="text-dark">model</span></a> // <a href="/cars/{{ $car->slug }}"><span class="text-dark">{{ $car->name }}</span></a>
           </h6>

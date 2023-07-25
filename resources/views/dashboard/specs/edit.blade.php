@@ -8,7 +8,8 @@
 <div class="bg-white">
   <div class="col-lg-8 p-5 d-flex flex-column gap-4">
     <h4>Edit {{ $title }}</h4>
-    <form action="/admin/dashboard/specs" method="POST" class="d-flex flex-column gap-2">
+    <form action="/admin/dashboard/specs/{{ $spec->id }}" method="POST" class="d-flex flex-column gap-2">
+      @method('put')
       @csrf
       <div class="d-flex flex-column">
         <label for="name" class="fw-bold">Nama</label>

@@ -6,6 +6,7 @@
     <h4>Edit {{ $title }}</h4>
     <form action="/admin/dashboard/cars" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-2">
       @csrf
+      @method('PUT')
       <div class="d-flex flex-column">
         <label for="name" class="fw-bold">Nama</label>
         <div class="input-group input-group-outline my-3">
@@ -15,7 +16,10 @@
             <div class="text-danger">{{ $message }}</div>
         @enderror
       </div>
-      <input type="text" class="form-control" id="slug" name="slug" placeholder="slug" hidden>
+      <input type="text" class="form-control" id="slug" name="slug" placeholder="slug" value="{{ old('slug', $car->slug) }}">
+      @error('slug')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
       <div class="d-flex flex-column">
         <label for="name" class="fw-bold">Brand</label>
         <div class="input-group input-group-static mb-4">
