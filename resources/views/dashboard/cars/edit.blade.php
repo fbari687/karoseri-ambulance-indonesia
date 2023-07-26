@@ -4,9 +4,9 @@
 <div class="bg-white">
   <div class="col-lg-8 p-5 d-flex flex-column gap-4">
     <h4>Edit {{ $title }}</h4>
-    <form action="/admin/dashboard/cars" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-2">
+    <form action="/admin/dashboard/cars/{{ $car->id }}" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-2">
       @csrf
-      @method('PUT')
+      @method('put')
       <div class="d-flex flex-column">
         <label for="name" class="fw-bold">Nama</label>
         <div class="input-group input-group-outline my-3">
