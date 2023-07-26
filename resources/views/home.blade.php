@@ -70,7 +70,7 @@
       <div class="pt-6 px-4 flex flex-col gap-4">
         <div class="flex items-center justify-between">
           <h3 class="font-bold text-xl lg:text-3xl">Daftar Model</h3>
-          <a href="/cars" class="self-end">
+          <a href="/cars?sortBy=latest" class="self-end">
             <h3 class="text-sky-500 text-sm transition duration-150 hover:text-sky-600">Lihat Semua Model</h3>
           </a>
         </div>
@@ -97,8 +97,8 @@
                   </div>
                 </li>
                 @endforeach
-                <li class="splide__slide border border-slate-300 flex justify-center items-center rounded-lg transition duration-150 shadow-md-right hover:bg-slate-400">
-                  <a href="/cars" class="self-center hover:bg-slate-400">
+                <li class="splide__slide border border-slate-300 flex justify-center items-center rounded-lg transition duration-150 shadow-md-right">
+                  <a href="/cars?sortBy=latest" class="h-full w-full self-center transition duration-150 hover:bg-slate-400">
                     <div class="p-3 w-full h-full bg-transparent flex flex-col gap-4 items-center justify-center">
                       <i class="fa-solid fa-angle-right fa-2xl"></i>
                       <span class="text-2xl">Lainnya</span>
@@ -133,6 +133,43 @@
     </div>
   </section>
   <!-- CTA Section End -->
+  <!-- Portfolio Section Start -->
+  <section id="portfolio" class="w-full" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="container mx-auto">
+      <div class="pt-6 px-4 flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-xl lg:text-3xl">Foto Serah Terima</h3>
+          <a href="/portfolio" class="self-end">
+            <h3 class="text-sky-500 text-sm transition duration-150 hover:text-sky-600">Lihat Semua Portfolio</h3>
+          </a>
+        </div>
+        <div class="w-full">
+          <div id="portfolio-carousel" class="splide" role="group">
+            <div class="splide__track py-4">
+              <ul class="splide__list">
+                @foreach ($portfolios as $portfolio)  
+                <li class="splide__slide">
+                  <div class="flex items-center justify-center h-[512px]">
+                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ asset('storage/'.$portfolio->image) }}')"></div>
+                  </div>
+                </li>
+                @endforeach
+                <li class="splide__slide border border-slate-300 flex justify-center items-center rounded-lg transition duration-150 shadow-md-right hover:bg-slate-400">
+                  <a href="/portfolio" class="h-full w-full self-center hover:bg-slate-400">
+                    <div class="p-3 w-full h-full bg-transparent flex flex-col gap-4 items-center justify-center">
+                      <i class="fa-solid fa-angle-right fa-2xl"></i>
+                      <span class="text-2xl">Lainnya</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Portfolio Section End -->
 @endsection
 
 @section('scriptjs')
@@ -171,6 +208,28 @@
     },
     gap: "8px",
     pagination: false,
+  }).mount(window.splide.Extensions);
+
+  new Splide("#portfolio-carousel", {
+    perPage: 3,
+    autoplay: "pause",
+    breakpoints: {
+      1024: {
+        perPage: 1,
+        arrows: false,
+      },
+    },
+    gap: "8px",
+    padding: 25,
+    pagination: false,
+    intersection: {
+      inView: {
+        autoplay: true,
+      },
+      outView: {
+        autoplay: false,
+      },
+    },
   }).mount(window.splide.Extensions);
 </script>
 @endsection

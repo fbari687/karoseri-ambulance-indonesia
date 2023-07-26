@@ -19,6 +19,9 @@ class CarController extends Controller
 
         if ($selectedBrandId) {
             $carsQuery->where('brand_id', $selectedBrandId);
+        } else {
+            // Jika $selectedBrandId tidak ada, query akan mengambil semua brand
+            $brands = Brand::all();
         }
 
         if ($sortBy == 'alphabet') {

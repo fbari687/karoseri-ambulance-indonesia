@@ -19,9 +19,10 @@
 <section id="main">
   <div class="container mx-auto">
     <div class="p-1 grid grid-cols-1 gap-4 lg:grid-cols-3 2xl:grid-cols-4">
-      @for ($i = 1; $i <= 24; $i++)
-      <a href="{{ asset('img/portfolio/ ('.$i.').jpg') }}" data-lightbox="roadtrip" class="h-64 bg-cover bg-center transition duration-150 hover:scale-110 hover:rotate-6" style="background-image: url('{{ asset('img/portfolio/ ('.$i.').jpg') }}')"></a>
-      @endfor
+      @foreach ($portfolios as $portfolio)
+        
+      <a href="{{ asset('storage/'.$portfolio->image) }}" data-lightbox="roadtrip" class="h-64 bg-cover bg-center transition duration-150 hover:scale-110 hover:rotate-6" style="background-image: url('{{ asset('storage/'.$portfolio->image) }}')"></a>
+      @endforeach
     </div>
   </div>
 </section>

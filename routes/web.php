@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardPortfolioController;
 use App\Http\Controllers\DashboardSpecsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SpecController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -43,9 +44,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('kontak');
 
-Route::get('/portfolio', function () {
-    return view('portfolio');
-});
+Route::get('/portfolio', [PortfolioController::class, 'index']);
 
 Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin', [LoginController::class, 'authenticate']);

@@ -10,7 +10,7 @@
             <i class="fa-solid fa-medal"></i>
           </div>
           <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">Total Merk Yang Didukung</p>
+            <p class="text-sm mb-0 text-capitalize">Total Brand Yang Didukung</p>
             <h4 class="mb-0">{{ $brands->count() }}</h4>
           </div>
         </div>

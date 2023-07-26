@@ -64,8 +64,12 @@
             </div>
           </div>
           <div class="px-2 flex flex-col gap-1">
-            <h3 class="pl-2 border-l-2 border-l-primary font-bold text-lg">Berdasarkan Merk</h3>
+            <h3 class="pl-2 border-l-2 border-l-primary font-bold text-lg">Berdasarkan Brand</h3>
             <div class="pl-2 flex flex-col gap-2">
+              <label for="all_brands" class="capitalize cursor-pointer">
+                <input type="radio" name="brand_id" value="" id="all_brands" class="accent-primary" @if ($selectedBrandId === null) checked @endif>
+                All Brands ({{ $brands->count() }})
+            </label>
               @foreach ($brands as $brand)
               <label for="{{ $brand->name }}" class="capitalize cursor-pointer">
                 <input type="radio" name="brand_id" value="{{ $brand->id }}" id="{{ $brand->name }}" class="accent-primary" @if ($selectedBrandId == $brand->id) checked @endif>
