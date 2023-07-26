@@ -1,14 +1,14 @@
 @extends('dashboard.layouts.main')
 
 @section('content')
-<a href="/admin/dashboard/carousels/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Carousel Baru</a>
+<a href="/admin/dashboard/portfolios/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Portfolio Baru</a>
 @if (session()->has('success'))
 <div class="col-lg-3 alert alert-success text-white" role="alert">
   <strong>Berhasil!</strong> {{ session('success') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-<div class="card">
+<div class="card col">
   <div class="table-responsive">
     <table class="table table-striped align-items-center mb-0">
       <thead>
@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($carousels as $carousel)
+        @foreach ($portfolios as $portfolio)
         <tr class="border-bottom">
           <td>
             <div class="d-flex px-2">
@@ -27,13 +27,13 @@
             </div>
           </td>
           <td>
-            <img src="{{ asset('storage/'.$carousel->image) }}" alt="" height="200px">
+            <img src="{{ asset('storage/'.$portfolio->image) }}" alt="" height="200px">
           </td>
           <td>
-            <form action="/admin/dashboard/carousels/{{ $carousel->id }}" method="POST" class="d-inline-block">
+            <form action="/admin/dashboard/portfolios/{{ $portfolio->id }}" method="POST" class="d-inline-block">
               @method('delete')
               @csrf
-              <button type="submit" onclick="return confirm('Yakin Menghapus Carousel ke-{{ $loop->iteration }}')" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+              <button type="submit" onclick="return confirm('Yakin Menghapus Portfolio ke-{{ $loop->iteration }}')" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
             </form>
           </td>
         </tr>
