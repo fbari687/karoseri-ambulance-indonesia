@@ -57,6 +57,14 @@
           <span class="nav-link-text ms-1">Portfolio</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link text-white {{ Request::is('admin/dashboard/contacts*') ? 'bg-gradient-primary' : ''}}" href="/admin/dashboard/contacts">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-address-book"></i>
+          </div>
+          <span class="nav-link-text ms-1">Contact</span>
+        </a>
+      </li>
     </ul>
   </div>
 </aside>

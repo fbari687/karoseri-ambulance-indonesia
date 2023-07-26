@@ -43,13 +43,19 @@
             <a href="https://web.facebook.com/profile.php?id=100009868959328">
               <div class="flex items-center gap-2">
                 <div class="bg-secondary py-3 px-4 rounded-full"><i class="fa-brands fa-facebook fa-lg text-white"></i></div>
-                <h4 class="font-bold text-lg">Rahmat Al Amin</h4>
+                <div class="flex flex-col">
+                  <h4 class="font-bold text-lg">Rahmat Al Amin</h4>
+                  <h5 class="text-sm"></h5>
+                </div>
               </div>
             </a>
             <a href="mailto:alaminrahmat@gmail.com">
               <div class="flex items-center gap-2">
                 <div class="bg-secondary py-3 px-4 rounded-full"><i class="fa-solid fa-envelope fa-lg text-white"></i></div>
-                <h4 class="font-bold text-lg">alaminrahmat@gmail.com</h4>
+                <div class="flex flex-col">
+                  <h4 class="font-bold text-lg">alaminrahmat@gmail.com</h4>
+                  <h5 class="text-sm"></h5>
+                </div>
               </div>
             </a>
           </div>
