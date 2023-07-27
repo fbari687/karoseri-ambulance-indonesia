@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardBrandsController;
 use App\Http\Controllers\DashboardCarouselsController;
 use App\Http\Controllers\DashboardCarsController;
@@ -41,9 +42,7 @@ Route::get('/about', function () {
     ]);
 })->name('tentang');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('kontak');
+Route::get('/contact', [ContactController::class, 'index']);
 
 Route::get('/portfolio', [PortfolioController::class, 'index']);
 

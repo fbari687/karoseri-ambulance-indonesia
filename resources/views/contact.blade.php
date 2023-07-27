@@ -22,16 +22,18 @@
         <div class="my-10 flex flex-col items-center gap-4 lg:items-start">
           <h2 class="font-bold text-xl text-primary pb-4 border-b-2 border-b-primary">Hubungi Kami</h2>
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <a href="https://wa.me/6281287624559?text=Assalamu'alaikum, Saya pengunjung website https://karoseri-ambulan.id, saya ingin informasi terbaru tentang karoseri ambulance">
+            @foreach ($contacts as $contact)
+            <a href="{{ $contact->link }}">
               <div class="flex items-center gap-2">
-                <div class="bg-[#25d366] py-3 px-4 rounded-full"><i class="fa-brands fa-whatsapp fa-lg text-white"></i></div>
+                <div class="@if($contact->socmed->name == "Whatsapp") bg-[#25d366] @else bg-secondary @endif py-3 px-4 rounded-full">{!! $contact->socmed->element !!}</div>
                 <div class="flex flex-col">
-                  <h4 class="font-bold text-lg">081287624559</h4>
-                  <h5 class="text-sm">a.n Ahmad Zikri</h5>
+                  <h4 class="font-bold text-lg">{{ $contact->name }}</h4>
+                  <h5 class="text-sm">{{ $contact->deskripsi }}</h5>
                 </div>
               </div>
             </a>
-            <a href="tel:+6281287624559">
+            @endforeach
+            {{-- <a href="tel:+6281287624559">
               <div class="flex items-center gap-2">
                 <div class="bg-secondary py-3 px-4 rounded-full"><i class="fa-solid fa-phone fa-lg text-white"></i></div>
                 <div class="flex flex-col">
@@ -57,7 +59,7 @@
                   <h5 class="text-sm"></h5>
                 </div>
               </div>
-            </a>
+            </a> --}}
           </div>
           <h2 class="mt-6 font-bold text-xl text-primary pb-4 border-b-2 border-b-primary">Lokasi Kami</h2>
           <div class="pt-2 px-4 flex flex-col gap-4">

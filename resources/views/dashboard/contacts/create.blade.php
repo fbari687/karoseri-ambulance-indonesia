@@ -47,6 +47,7 @@
             <div class="text-danger">{{ $message }}</div>
         @enderror
       </div>
+      
       <button type="submit" class="col-lg-2 btn btn-info align-self-end">Create</button>
     </form>
   </div>

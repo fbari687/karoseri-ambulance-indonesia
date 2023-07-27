@@ -39,7 +39,7 @@ class DashboardContactsController extends Controller
             'socmed_id' => 'required|exists:socmeds,id',
             'name' => 'required|max:255',
             'deskripsi' => 'max:255',
-            'link' => 'max:255'
+            'link' => 'max:255',
         ]);
 
         Contact::create($validatedData);
@@ -76,7 +76,7 @@ class DashboardContactsController extends Controller
             "socmed_id" => "required|exists:socmeds,id",
             "name" => "required|max:255",
             "deskripsi" => "max:255",
-            "link" => "max:255"
+            "link" => "max:255",
         ]);
 
         Contact::where('id', $contact->id)->update($validatedData);

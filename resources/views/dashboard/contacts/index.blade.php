@@ -8,7 +8,7 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-<div class="card col">
+<div class="card">
   <div class="table-responsive">
     <table class="table table-striped align-items-center mb-0">
       <thead>
@@ -33,13 +33,19 @@
             {{ $contact->socmed->name }}
           </td>
           <td>
-            {{ $contact->name }}
+            <small>
+              {{ $contact->name }}
+            </small>
           </td>
           <td>
-            {{ $contact->deskripsi }}
+            <small>
+              {{ $contact->deskripsi }}
+            </small>
           </td>
           <td>
-            {{ $contact->link }}
+            <small>
+              {{ $contact->link }}
+            </small>
           </td>
           <td>
             <a href="/admin/dashboard/contacts/{{ $contact->id }}/edit" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
