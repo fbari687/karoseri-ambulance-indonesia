@@ -138,7 +138,7 @@
     <div class="container mx-auto">
       <div class="pt-6 px-4 flex flex-col gap-4">
         <div class="flex items-center justify-between">
-          <h3 class="font-bold text-xl lg:text-3xl">Foto Serah Terima</h3>
+          <h3 class="font-bold text-xl lg:text-3xl">Proyek Kami</h3>
           <a href="/portfolio" class="self-end">
             <h3 class="text-sky-500 text-sm transition duration-150 hover:text-sky-600">Lihat Semua Portfolio</h3>
           </a>
@@ -149,19 +149,11 @@
               <ul class="splide__list">
                 @foreach ($portfolios as $portfolio)  
                 <li class="splide__slide">
-                  <div class="flex items-center justify-center h-[512px]">
-                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ asset('storage/'.$portfolio->image) }}')"></div>
+                  <div class="flex items-center justify-center h-[426px]">
+                    <div class="w-full h-full bg-cover bg-center rounded-lg" style="background-image: url('{{ asset('storage/'.$portfolio->image) }}')"></div>
                   </div>
                 </li>
                 @endforeach
-                <li class="splide__slide border border-slate-300 flex justify-center items-center rounded-lg transition duration-150 shadow-md-right hover:bg-slate-400">
-                  <a href="/portfolio" class="h-full w-full self-center hover:bg-slate-400">
-                    <div class="p-3 w-full h-full bg-transparent flex flex-col gap-4 items-center justify-center">
-                      <i class="fa-solid fa-angle-right fa-2xl"></i>
-                      <span class="text-2xl">Lainnya</span>
-                    </div>
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
@@ -170,6 +162,40 @@
     </div>
   </section>
   <!-- Portfolio Section End -->
+  <!-- Contact Section Start -->
+  <section id="contact" class="w-full mt-8">
+    <div class="container mx-auto bg-center bg-cover" style="background-image: url({{ asset('img/bg-call.jpg') }})">
+      <div class="flex flex-col items-center lg:flex-row" style="background: rgb(217,216,208);
+      background: linear-gradient(90deg, rgba(217,216,208,0.45702030812324934) 19%, rgba(0,0,0,0.742734593837535) 38%);">
+        <div class="hidden lg:block">
+          <div class="flex items-center justify-center">
+            <img src="{{ asset('img/icon.png') }}" alt="" class="w-2/3">
+          </div>
+        </div>
+        <div class="block">
+          <div class="p-8 flex flex-col items-center">
+            <div class="p-4 border-b-2 border-b-secondary flex items-center self-center">
+              <h2 class="text-secondary font-bold text-2xl text-center">Konsultasikan Kebutuhan Mobil Ambulance Anda</h2>
+            </div>
+            <div class="p-8 grid grid-cols-1 gap-6 text-white lg:grid-cols-2">
+              @foreach ($contacts as $contact)
+              <a href="{{ $contact->link }}">
+                <div class="flex items-center gap-2">
+                  <div class="@if($contact->socmed->name == "Whatsapp") bg-[#25d366] @else bg-secondary @endif py-3 px-4 rounded-full">{!! $contact->socmed->element !!}</div>
+                  <div class="flex flex-col">
+                    <h4 class="font-bold text-lg">{{ $contact->name }}</h4>
+                    <h5 class="text-sm ">{{ $contact->deskripsi }}</h5>
+                  </div>
+                </div>
+              </a>
+              @endforeach
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
 @endsection
 
 @section('scriptjs')
@@ -203,14 +229,14 @@
     breakpoints: {
       1024: {
         perPage: 2,
-        arrows: false,
+        arrows: true,
       },
     },
     gap: "8px",
-    pagination: false,
   }).mount(window.splide.Extensions);
 
   new Splide("#portfolio-carousel", {
+    type: "loop",
     perPage: 3,
     autoplay: "pause",
     breakpoints: {
@@ -221,7 +247,6 @@
     },
     gap: "8px",
     padding: 25,
-    pagination: false,
     intersection: {
       inView: {
         autoplay: true,

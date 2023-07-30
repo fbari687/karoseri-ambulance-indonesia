@@ -6,7 +6,7 @@
     <div class="container mx-auto">
       <div class="py-4 px-4 bg-secondary">
         <h2 class="font-bold text-xl text-white lg:text-3xl">SEMUA MODEL</h2>
-        <span class="text-white text-sm">Model yang didukung Karoseri Ambulance Indonesia</span>
+        <span class="text-dark text-sm">Model yang didukung Karoseri Ambulance Indonesia</span>
       </div>
     </div>
   </section>
